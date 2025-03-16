@@ -17,7 +17,7 @@ public class CSVFileDataResultBuilder {
 //                            String resultString =  id + "," + priceMap.get(id) + "," + nameMap.get(id);
 //                            return Stream.of(resultString);
 //                          } else {
-//                            errorMap.put(id, "Problem here");
+//                            errorMap.put(id);
 //                            return Stream.empty();
 //
 //                        }
