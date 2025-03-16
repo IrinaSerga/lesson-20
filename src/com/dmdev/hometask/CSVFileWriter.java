@@ -28,7 +28,6 @@ public class CSVFileWriter {
 
                         });
                 System.out.println("Add new csv file");
-
             }
 
         }
