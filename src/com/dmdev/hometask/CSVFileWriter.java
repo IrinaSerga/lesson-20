@@ -11,6 +11,9 @@ import static java.nio.file.StandardOpenOption.CREATE;
 
 public class CSVFileWriter {
 
+
+//    лучше явно ловить ошибку и логировать (в данном случае просо хотябы в консоль кинуть) и обернуть в свою кастомную ошибку, иначе птом не найдешь где что упало
+//} catch (IOException e) { System.out.println("[ERROR] writeResultCSVFile() writing to file error "); throw new WriteFileEcxeption(e); }
     public static void writeResultCSVFile(Path pathPrice, Path pathName, Path result) throws IOException {
         Map<String, String> priceMap = CSVFileReader.readFromFileToMap(pathPrice);
         Map<String, String> nameMap = CSVFileReader.readFromFileToMap(pathName);
@@ -23,6 +26,7 @@ public class CSVFileWriter {
                                 bufferedWriter.write(line);
                                 bufferedWriter.newLine();
                             } catch (IOException e) {
+                                 System.out.println("[ERROR] writeResultCSVFile() writing to file error ");
                                 throw new RuntimeException(e);
                             }
 
